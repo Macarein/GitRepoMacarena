@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_navigation"
+    app:startDestination="@id/mainActivity">
+
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.macarenarodriguezboleto.openeyes.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="com.macarenarodriguezboleto.openeyes.features.splashScreen.SplashScreenFragment"
+        android:label="SplashScreenFragment"
+        tools:layout="@layout/splash_screen_fragment" >
+        <action
+            android:id="@+id/action_splashScreenFragment_to_homeMapFragment"
+            app:destination="@id/homeMapFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeMapFragment"
+        android:name="com.macarenarodriguezboleto.openeyes.features.homeMap.HomeMapFragment"
+        android:label="HomeMapFragment"
+        tools:layout="@layout/home_map_fragment" />
+
+
+
+</navigation>

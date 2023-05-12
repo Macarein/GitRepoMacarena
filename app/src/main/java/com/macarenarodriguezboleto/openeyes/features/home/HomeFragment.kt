@@ -9,17 +9,17 @@ import androidx.navigation.Navigation
 import com.macarenarodriguezboleto.openeyes.R
 
 class HomeFragment : Fragment() {
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.splash_fragment, container, false)
-
-        //TODO Navigation.findNavController(view).popBackStack()
-
-        return view
-    }
+//
+//    override fun onCreateView(
+//        inflater: LayoutInflater, container: ViewGroup?,
+//        savedInstanceState: Bundle?
+//    ): View? {
+//        val view = inflater.inflate(R.layout.splash_fragment, container, false)
+//
+//        //TODO Navigation.findNavController(view).popBackStack()
+//
+//        return view
+//    }
 
 
 }

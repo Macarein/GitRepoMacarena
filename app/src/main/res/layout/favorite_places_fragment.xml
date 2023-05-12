@@ -5,9 +5,10 @@
     android:layout_height="match_parent"
     tools:context=".features.favoritePlaces.FavoritePlacesFragment">
 
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello" />
+        tools:listitem="@layout/item_list_place" />
 
 </FrameLayout>

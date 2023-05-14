@@ -4,8 +4,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.macarenarodriguezboleto.openeyes.R
+import com.macarenarodriguezboleto.openeyes.data.model.Place
 
-class FavoritePlacesAdapter() :
+class FavoritePlacesAdapter(private val placesList: List<Place>) :
     RecyclerView.Adapter<FavoritePlacesViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavoritePlacesViewHolder {
@@ -20,10 +21,10 @@ class FavoritePlacesAdapter() :
     }
 
     override fun onBindViewHolder(holder: FavoritePlacesViewHolder, position: Int) {
-        holder.fillViewHolder()
+        holder.fillViewHolder(placesList[position])
     }
 
-    override fun getItemCount(): Int = 0
+    override fun getItemCount(): Int = placesList.size
 
 
 }

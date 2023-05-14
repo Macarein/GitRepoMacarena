@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/map_item"
+        android:enabled="true"
+        android:icon="@drawable/outline_map_24"
+        android:title="Map" />
+
+    <item
+        android:id="@+id/places_item"
+        android:enabled="true"
+        android:icon="@drawable/baseline_star_border_24"
+        android:title="Favorite Places" />
+</menu>

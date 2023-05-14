@@ -8,7 +8,7 @@
     app:cardCornerRadius="8dp">
 
     <TextView
-        android:id="@+id/tvProductName"
+        android:id="@+id/itemPlaceName"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:hint="Prueba texto"
@@ -18,4 +18,3 @@
         android:textStyle="bold" />
 
 </androidx.cardview.widget.CardView>
-

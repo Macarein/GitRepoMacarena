@@ -2,29 +2,27 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/home_navigation"
-    app:startDestination="@id/splashFragment">
+    android:id="@+id/activity_main_fragment_container"
+    app:startDestination="@id/googleMapFragment">
 
-    <fragment
-        android:id="@+id/splashFragment"
-        android:name="com.macarenarodriguezboleto.openeyes.features.splash.SplashFragment"
-        android:label="SplashScreenFragment"
-        tools:layout="@layout/splash_fragment">
-        <action
-            android:id="@+id/action_splashScreenFragment_to_homeMapFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.macarenarodriguezboleto.openeyes.features.home.HomeFragment"
-        android:label="HomeMapFragment"
-        tools:layout="@layout/home_fragment" />
     <fragment
         android:id="@+id/favoritePlacesFragment"
         android:name="com.macarenarodriguezboleto.openeyes.features.favoritePlaces.FavoritePlacesFragment"
         android:label="favorite_places_fragment"
-        tools:layout="@layout/favorite_places_fragment" />
+        tools:layout="@layout/favorite_places_fragment" >
+        <action
+            android:id="@+id/action_favoritePlacesFragment_to_googleMapFragment"
+            app:destination="@id/googleMapFragment" />
+    </fragment>
 
+    <fragment
+        android:id="@+id/googleMapFragment"
+        android:name="com.macarenarodriguezboleto.openeyes.features.googleMap.GoogleMapFragment"
+        android:label="google_map_fragment"
+        tools:layout="@layout/google_map_fragment" >
+        <action
+            android:id="@+id/action_googleMapFragment_to_favoritePlacesFragment"
+            app:destination="@id/favoritePlacesFragment" />
+    </fragment>
 
 </navigation>

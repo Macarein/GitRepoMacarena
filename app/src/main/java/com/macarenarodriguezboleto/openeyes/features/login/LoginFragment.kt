@@ -52,11 +52,7 @@ class LoginFragment : Fragment() {
                     view
                 )
             } else {
-                Toast.makeText(
-                    requireContext(),
-                    "Debe rellenar los campos correctamente",
-                    Toast.LENGTH_SHORT
-                ).show()
+                showAlert("Debe rellenar los campos correctamente")
             }
         }
 
@@ -68,11 +64,7 @@ class LoginFragment : Fragment() {
                     view
                 )
             } else {
-                Toast.makeText(
-                    requireContext(),
-                    "Debe rellenar los campos correctamente",
-                    Toast.LENGTH_SHORT
-                ).show()
+                showAlert("Debe rellenar los campos correctamente")
             }
         })
     }
@@ -82,7 +74,6 @@ class LoginFragment : Fragment() {
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
-                    Log.d("Create OK", "createUserWithEmail:success")
                     val user: FirebaseUser = firebaseAuth.currentUser!!
                     findNavController().navigate(R.id.action_loginFragment_to_googleMapFragment)
                 } else {

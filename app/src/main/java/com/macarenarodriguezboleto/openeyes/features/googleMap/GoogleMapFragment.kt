@@ -1,6 +1,7 @@
 package com.macarenarodriguezboleto.openeyes.features.googleMap
 
 import android.Manifest
+import android.content.Context.LOCATION_SERVICE
 import android.content.pm.PackageManager
 import android.location.Location
 import android.location.LocationListener
@@ -46,9 +47,8 @@ class GoogleMapFragment : Fragment(), OnMapReadyCallback {
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
-        createMarker()
         map = googleMap
-
+        createMarker()
 //        miUbicacion()
     }
 
@@ -61,22 +61,22 @@ class GoogleMapFragment : Fragment(), OnMapReadyCallback {
 //        override fun onProviderEnabled(s: String) {}
 //        override fun onProviderDisabled(s: String) {}
 //    }
-
+//
 //    private fun miUbicacion() {
-//        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+//        if (ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION)
 //            != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
-//                this,
+//                requireContext(),
 //                Manifest.permission.ACCESS_COARSE_LOCATION
 //            ) != PackageManager.PERMISSION_GRANTED
 //        ) {
 //            return
 //        }
-//        val locationManager = getSystemService(LOCATION_SERVICE) as LocationManager
+//        val locationManager = context?.getSystemService(LOCATION_SERVICE) as LocationManager
 //        val location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER)
 //        actualizarUbicacion(location)
 //        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 15000, 0f, locListener)
 //    }
-
+//
 //    private fun actualizarUbicacion(location: Location?) {
 //        if (location != null) {
 //            dataBase!!.child("usuarios").addValueEventListener(object : ValueEventListener {
@@ -105,7 +105,7 @@ class GoogleMapFragment : Fragment(), OnMapReadyCallback {
 //    }
 
     private fun createMarker() {
-        val coordinates = LatLng(37.40451578919928, -6.007550367475018)
+        val coordinates = LatLng(37.4045157, -6.007550367)
         val marker = MarkerOptions().position(coordinates).title("Campus Camara")
         map.addMarker(marker)
         map.animateCamera(
@@ -113,5 +113,6 @@ class GoogleMapFragment : Fragment(), OnMapReadyCallback {
             4000,
             null
         )
+        map.moveCamera(CameraUpdateFactory.newLatLng(coordinates))
     }
 }

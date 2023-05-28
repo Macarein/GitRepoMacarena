@@ -17,7 +17,6 @@ class SplashFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.splash_fragment, container, false)
-
         startSplashScreen()
 
         return view
@@ -26,6 +25,6 @@ class SplashFragment : Fragment() {
     private fun startSplashScreen() {
         Handler(Looper.myLooper()!!).postDelayed({
             findNavController().navigate(R.id.action_splashFragment_to_loginFragment)
-        }, 3000)
+        }, 4000)
     }
 }

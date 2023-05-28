@@ -19,17 +19,13 @@ class MainActivity : AppCompatActivity() {
     private val favoritePlacesFragment = FavoritePlacesFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        Thread.sleep(3000)
-        setTheme(R.style.Theme_OpenEyes)
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        replaceFragment(googleMapFragment)
-
         binding.bottomNavigationView.setOnItemSelectedListener {
             when (it.itemId) {
-//                R.id.map_item -> replaceFragment(googleMapFragment)
+                R.id.map_item -> replaceFragment(googleMapFragment)
                 R.id.places_item -> replaceFragment(favoritePlacesFragment)
             }
             true

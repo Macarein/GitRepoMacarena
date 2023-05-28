@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">OpenEyes</string>
+    <string name="edt_email">Correo electrónico</string>
+    <string name="edt_password">Contraseña</string>
 </resources>

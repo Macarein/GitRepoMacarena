@@ -23,15 +23,13 @@ class MainActivity : AppCompatActivity() {
         setTheme(R.style.Theme_OpenEyes)
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        binding.bottomNavigationView.visibility = View.VISIBLE
-        binding.toolbar.visibility = View.VISIBLE
         setContentView(binding.root)
 
-        replaceFragment(googleMapFragment)
+//        replaceFragment(googleMapFragment)
 
         binding.bottomNavigationView.setOnItemSelectedListener {
             when (it.itemId) {
-                R.id.map_item -> replaceFragment(googleMapFragment)
+//                R.id.map_item -> replaceFragment(googleMapFragment)
                 R.id.places_item -> replaceFragment(favoritePlacesFragment)
             }
             true
@@ -39,6 +37,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun replaceFragment(fragment: Fragment) {
+        binding.bottomNavigationView.visibility = View.VISIBLE
+        binding.toolbar.visibility = View.VISIBLE
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.activity_main_fragment_container, fragment)
         transaction.commit()

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "953740216185",
+    "project_id": "openeyes-123",
+    "storage_bucket": "openeyes-123.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:953740216185:android:494c7868cef284f59c51a8",
+        "android_client_info": {
+          "package_name": "com.macarenarodriguezboleto.openeyes"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRj4XOkAWKI49CYZyl9_RmVVkb_Bhprvc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

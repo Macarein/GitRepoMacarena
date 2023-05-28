@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -45,6 +46,7 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1'
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
 
     //Testing
     testImplementation 'junit:junit:4.13.2'
@@ -60,13 +62,11 @@ dependencies {
 
     //GoogleMap
     implementation("com.google.android.gms:play-services-maps:18.1.0")
-    implementation 'com.google.maps.android:android-maps-utils:2.4.0'
-    implementation 'com.google.android.gms:play-services-location:21.0.1'
 
     //Firebase
-    implementation 'com.google.firebase:firebase-auth'
-    implementation 'com.google.firebase:firebase-analytics'
-    implementation 'com.google.firebase:firebase-database:20.2.1'
-    implementation platform('com.google.firebase:firebase-bom:30.1.0')
+    implementation platform('com.google.firebase:firebase-bom:32.0.0')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.firebaseui:firebase-ui-auth:7.2.0'
+    implementation 'com.google.firebase:firebase-database-ktx:20.2.2'
 
 }

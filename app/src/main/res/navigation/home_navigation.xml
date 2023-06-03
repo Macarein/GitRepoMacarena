@@ -6,34 +6,10 @@
     app:startDestination="@id/splashFragment">
 
     <fragment
-        android:id="@+id/favoritePlacesFragment"
-        android:name="com.macarenarodriguezboleto.openeyes.features.favoritePlaces.FavoritePlacesFragment"
-        android:label="favorite_places_fragment"
-        tools:layout="@layout/favorite_places_fragment">
-        <action
-            android:id="@+id/action_favoritePlacesFragment_to_googleMapFragment"
-            app:destination="@id/googleMapFragment" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/googleMapFragment"
-        android:name="com.macarenarodriguezboleto.openeyes.features.googleMap.GoogleMapFragment"
-        android:label="google_map_fragment"
-        tools:layout="@layout/google_map_fragment">
-        <action
-            android:id="@+id/action_googleMapFragment_to_favoritePlacesFragment"
-            app:destination="@id/favoritePlacesFragment" />
-    </fragment>
-
-    <fragment
         android:id="@+id/loginFragment"
         android:name="com.macarenarodriguezboleto.openeyes.features.login.LoginFragment"
         android:label="login_fragment"
-        tools:layout="@layout/login_fragment">
-        <action
-            android:id="@+id/action_loginFragment_to_googleMapFragment"
-            app:destination="@id/googleMapFragment" />
-    </fragment>
+        tools:layout="@layout/login_fragment"/>
     <fragment
         android:id="@+id/splashFragment"
         android:name="com.macarenarodriguezboleto.openeyes.features.splash.SplashFragment"

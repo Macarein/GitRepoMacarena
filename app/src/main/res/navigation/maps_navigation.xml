@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/favoritePlacesFragment">
+
+    <fragment
+        android:id="@+id/favoritePlacesFragment"
+        android:name="com.macarenarodriguezboleto.openeyes.features.favoritePlaces.FavoritePlacesFragment"
+        android:label="favorite_places_fragment"
+        tools:layout="@layout/favorite_places_fragment" />
+
+</navigation>

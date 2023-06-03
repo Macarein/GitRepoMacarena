@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'com.google.gms.google-services'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
 
 android {
@@ -56,6 +57,9 @@ dependencies {
     //Fragment
     implementation("androidx.fragment:fragment-ktx:1.5.7")
 
+    //Activity
+    implementation 'androidx.activity:activity-ktx:1.7.2'
+
     //Navigation
     implementation("androidx.navigation:navigation-fragment-ktx:2.5.3")
     implementation("androidx.navigation:navigation-ui-ktx:2.5.3")
@@ -65,8 +69,11 @@ dependencies {
 
     //Firebase
     implementation platform('com.google.firebase:firebase-bom:32.0.0')
-    implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.firebaseui:firebase-ui-auth:7.2.0'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.firebase:firebase-database-ktx:20.2.2'
+    implementation 'com.google.firebase:firebase-firestore-ktx:24.6.1'
 
 }
+
+apply plugin: 'com.google.gms.google-services'

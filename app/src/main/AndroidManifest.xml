@@ -4,8 +4,8 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -19,12 +19,17 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_api" />
+            android:value="${MAPS_API_KEY}" />
 
+        <activity
+            android:name=".features.googleMap.MapsActivity"
+            android:exported="false"
+            android:label="Open Eyes"
+            android:theme="@style/Theme.OpenEyes" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.OpenEyes">
+            android:theme="@style/Theme.OpenEyes.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

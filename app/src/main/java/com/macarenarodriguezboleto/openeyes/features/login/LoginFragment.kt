@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.macarenarodriguezboleto.openeyes.R
 import com.macarenarodriguezboleto.openeyes.databinding.LoginFragmentBinding
+import com.macarenarodriguezboleto.openeyes.features.googleMap.MapsActivity
 
 class LoginFragment : Fragment() {
 
@@ -38,10 +39,10 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Initialize Firebase Auth
+        // Se inicializa el servicio de Firebase autentificacion
         firebaseAuth = FirebaseAuth.getInstance()
 
-        // Check if user is signed in (non-null) and update UI accordingly.
+        // Se revisa que el usuario no siga logeado en cuyo caso se muestra correctamente la vista correspondiente
         firebaseAuth.currentUser?.reload()
 
         binding.btnCreateUser.setOnClickListener {
@@ -52,6 +53,7 @@ class LoginFragment : Fragment() {
                     view
                 )
             } else {
+                //Si la creacion no es correcta se muestra un mensaje de error
                 showAlert("Debe rellenar los campos correctamente")
             }
         }
@@ -64,6 +66,7 @@ class LoginFragment : Fragment() {
                     view
                 )
             } else {
+                //Si el login no es correcto se muestra un mensaje de error en el login
                 showAlert("Debe rellenar los campos correctamente")
             }
         })
@@ -73,11 +76,12 @@ class LoginFragment : Fragment() {
         firebaseAuth.createUserWithEmailAndPassword(email!!, password!!)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
+                    // Si la creacion es correcta se loguea automaticamente y pasa a la siguiente pantalla
                     val user: FirebaseUser = firebaseAuth.currentUser!!
-                    findNavController().navigate(R.id.action_loginFragment_to_googleMapFragment)
+                    val intent = Intent(activity, MapsActivity::class.java)
+                    startActivity(intent)
                 } else {
-                    // If sign in fails, display a message to the user.
+                    // Si falla la autenticación se muestra un mensaje de error
                     showAlert("El usuario ya está creado")
                 }
             }
@@ -89,9 +93,10 @@ class LoginFragment : Fragment() {
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
                     val user: FirebaseUser = firebaseAuth.currentUser!!
-                    findNavController().navigate(R.id.action_loginFragment_to_googleMapFragment)
+                    val intent = Intent(activity, MapsActivity::class.java)
+                    startActivity(intent)
                 } else {
-                    // If sign in fails, display a message to the user.
+                    // Si falla la autenticación se muestra un mensaje de error
                     showAlert("Fallo en la autenticación")
                 }
             }

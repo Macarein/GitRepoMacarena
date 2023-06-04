@@ -82,7 +82,7 @@ class LoginFragment : Fragment() {
                     startActivity(intent)
                 } else {
                     // Si falla la autenticación se muestra un mensaje de error
-                    showAlert("El usuario ya está creado")
+                    showAlert("A ocurrido un fallo en la creación del usuario o el usuario ya está creado")
                 }
             }
     }
